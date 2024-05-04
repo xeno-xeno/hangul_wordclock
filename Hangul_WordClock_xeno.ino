@@ -16,7 +16,7 @@ Adafruit_NeoPixel strip = Adafruit_NeoPixel(NUM_LEDS, LED_PIN, NEO_GRBW + NEO_KH
 // DS3231 RTC 객체 생성
 RTC_DS3231 rtc; 
 
-// hour_positions 배열의 선언 및 초기화를 수정합니다.
+// hour_positions 배열의 선언
 int hour_positions[12][3] = {
   { 1, 14, -1 },   // 1시
   { 9, 14, -1 },   // 2시
@@ -95,26 +95,26 @@ void show_time(int h, int m) {
     for (int i = 0; i < 3 && hour_positions[hourIndex][i] != -1; i++) {
         strip.setPixelColor(hour_positions[hourIndex][i], strip.Color(0, 0, 0, 50));
     }
-  // 분 표시
-  if (minuteIndex >= 0) {
-    for (int i = 0; i < 4 && minute_positions[minuteIndex][i] != -1; i++) {
-      // 분을 표시하는 LED를 흰색으로 설정
-      strip.setPixelColor(minute_positions[minuteIndex][i], strip.Color(0, 0, 0, 50));
+    // 분 표시
+    if (minuteIndex >= 0) {
+      for (int i = 0; i < 4 && minute_positions[minuteIndex][i] != -1; i++) {
+        // 분을 표시하는 LED를 흰색으로 설정
+        strip.setPixelColor(minute_positions[minuteIndex][i], strip.Color(0, 0, 0, 50));
+      }
     }
-  }
-  // 자정과 정오에 추가로 표시할 LED 설정
-  if (m <= 15) { // 분(m)이 15분 이내 일때만 실행
-    if (h == 0) { // 자정
-      strip.setPixelColor(18, strip.Color(255, 255, 80, 0));
-      strip.setPixelColor(19, strip.Color(255, 255, 80, 0));
-    } else if (h == 12) { // 정오
-      strip.setPixelColor(18, strip.Color(50, 255, 255, 0));
-      strip.setPixelColor(21, strip.Color(50, 255, 255, 0));
+    // 자정과 정오에 추가로 표시할 LED 설정
+    if (m <= 15) { // 분(m)이 15분 이내 일때만 실행
+      if (h == 0) { // 자정
+        strip.setPixelColor(18, strip.Color(255, 255, 80, 0));
+        strip.setPixelColor(19, strip.Color(255, 255, 80, 0));
+      } else if (h == 12) { // 정오
+        strip.setPixelColor(18, strip.Color(50, 255, 255, 0));
+        strip.setPixelColor(21, strip.Color(50, 255, 255, 0));
+      }
     }
-  }
 
-  // LED 스트립 업데이트
-  strip.show();
+    // LED 스트립 업데이트
+    strip.show();
 }
 
 
@@ -148,11 +148,11 @@ void loop() {
 
 // 대기 모드로 진입하는 함수
 void enterSleepMode() {
-  set_sleep_mode(SLEEP_MODE_PWR_DOWN); // 최대 전원 절약 모드 선택
-  sleep_enable(); // 대기 모드 활성화
-  sleep_cpu(); // 대기 모드 진입
-  // 대기 모드에서 깨어나면 이후 코드가 실행됨
-  sleep_disable(); // 대기 모드 비활성화
+    set_sleep_mode(SLEEP_MODE_PWR_DOWN); // 최대 전원 절약 모드 선택
+    sleep_enable(); // 대기 모드 활성화
+    sleep_cpu(); // 대기 모드 진입
+    // 대기 모드에서 깨어나면 이후 코드가 실행됨
+    sleep_disable(); // 대기 모드 비활성화
 }
 
 void wakeUp() {
