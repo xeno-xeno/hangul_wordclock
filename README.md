@@ -11,7 +11,7 @@
 
 
 [주요 부품]
-- Arduino Mini Pro (5V)
+- Arduino Pro Mini(5V)
 - LED Strip Light — SK6812 60LED
 - DS3231 RTC(Real Time Clock)
 - 한글 프린트 시트지/ 아크릴 판 / 소형액자
