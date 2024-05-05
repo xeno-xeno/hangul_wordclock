@@ -4,7 +4,7 @@
 초 단위로 정보를 제공하는 일반적인 시계와 달리,  
 **5분의 여백을 한글이라는 감성으로 제공**한다는 점이 매력으로 다가와 제작하게  되었습니다.
 <br /><br />  
-> 참고 : 한글시계 프로젝트 https://github.com/suapapa/HangulClock  
+> suapapa님의 한글시계에 영감을 받았습니다. https://github.com/suapapa/HangulClock  
 
 
 <br /><br />  
@@ -17,7 +17,8 @@
 - 한글 프린트 시트지/ 아크릴 판 / 소형액자
 - Arduino Sketche / IDE
 - 옵션) FTDI232 USB Uploader / USB C 타입 충전모듈
-<br /><br />  
+<br /><br />
+
 [주요 기능]
 1) 아두이노, DS3231 RTC, SK6812 LED를 연결해 5분단위로 시간 표시
 2) 보조배터리 전원을 고려하여, 저-전력 시스템을 위해 아두이노가 LED에 시간 표시 후, 5분간 슬립모드로 전환.  
