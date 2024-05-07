@@ -1,4 +1,5 @@
-[![Video Label](http://img.youtube.com/vi/tZe2udGi6is/0.jpg)](https://www.youtube.com/watch?v=tZe2udGi6is)
+[![Video Label](http://img.youtube.com/vi/tZe2udGi6is/0.jpg)](https://www.youtube.com/watch?v=tZe2udGi6is)  
+[작동영상](https://www.youtube.com/watch?v=tZe2udGi6is)
 <br /><br />
 아두이노와 LED를 사용해 5분 단위로 현재시간을 한글로 표시하는 시계 제작 프로젝트입니다.  
 초 단위로 정보를 제공하는 일반적인 시계와 달리,  
